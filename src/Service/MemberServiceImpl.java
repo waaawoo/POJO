@@ -5,7 +5,17 @@ import java.util.ArrayList;
 import entity.Member;
 
 public class MemberServiceImpl implements MemberService {
-
+	
+//	シングルトンパターン用に記述
+	private static MemberServiceImpl singleton = new MemberServiceImpl();
+//	外からnewができないようにする
+	private MemberServiceImpl() {};
+//　外から情報を取得するようの記述
+	public static MemberServiceImpl getInstance() {
+		return singleton;
+	}
+	
+	
 //	明示的にアノテーションでオーバーライドを記載している
 	@Override
 	public String greet(int i) {
