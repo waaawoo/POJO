@@ -31,7 +31,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int sumOf(int x, int y) {
 		
-		int ans = 0;
+		int ans = 0; //答えを格納
 		for(int i = x; i <= y; i++) {
 			ans += i;
 		}
