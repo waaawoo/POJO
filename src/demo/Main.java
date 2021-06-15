@@ -2,13 +2,19 @@ package demo;
 
 import java.util.ArrayList;
 
+import Service.MemberService;
 import Service.MemberServiceImpl;
 import entity.Member;
 
 public class Main {
 
 	public static void main(String[] args) {
-		MemberServiceImpl service = new MemberServiceImpl();
+		
+//		シングルトンパターンの場合newできない
+//		MemberServiceImpl service = new MemberServiceImpl();
+//		メソッドで情報を取り出す
+		MemberService service = MemberServiceImpl.getInstance();
+		
 //		System.out.println(service.getAll());
 		ArrayList<Member> list = service.getAll();
 //		for(Member mem : list) {
